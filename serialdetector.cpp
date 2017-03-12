@@ -17,6 +17,19 @@ SerialDetector::~SerialDetector(){
     scannThread->wait();
 }
 
+
+QSerialPortInfo SerialDetector::getSerialPortInfo(const QString &portName){
+
+
+     QSerialPortInfo portInfo(portName);
+
+
+     return portInfo;
+
+
+
+}
+
 void SerialDetector::handleResults(const int &status, const QSet<QString> &coms){
 
 
