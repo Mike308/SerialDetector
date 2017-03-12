@@ -1,5 +1,6 @@
 #include <QObject>
-
+#include <QSerialPortInfo>
+#include <QSet>
 #ifndef SERIALSCANNER_H
 #define SERIALSCANNER_H
 
@@ -20,13 +21,16 @@ private:
     QList<QString> startedCOMList;
 
 
-signals:
-    void scannConnected(QSet<QString> coms);
-
-
-
 public slots:
     void scannSerialPorts();
+
+signals:
+    void scannSignal(const int &status, const QSet<QString> &coms);
+
+
+
+
+
 };
 
 #endif // SERIALSCANNER_H
