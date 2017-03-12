@@ -20,6 +20,7 @@ QList<QString> SerialScanner::updateCOMList(){
 
         comNames.append(items.portName());
 
+
     }
 
     serialPortInfo->~QSerialPortInfo();

@@ -28,6 +28,8 @@ void MainWindow::detected(int status, QSet<QString> coms){
 
             ui->plainTextEdit->appendPlainText("Disconnected: "+comNames);
 
+
+
         }
 
     }else{
@@ -35,6 +37,9 @@ void MainWindow::detected(int status, QSet<QString> coms){
         foreach (QString comNames, coms) {
 
             ui->plainTextEdit->appendPlainText("Connected: "+comNames);
+            ui->plainTextEdit->appendPlainText("Serial number: "+serialDetector->getSerialPortInfo(comNames).serialNumber());
+            ui->plainTextEdit->appendPlainText("Manufacturer: "+serialDetector->getSerialPortInfo(comNames).manufacturer());
+
 
         }
 
