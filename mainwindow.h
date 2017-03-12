@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include "serialdetector.h"
 
 namespace Ui {
 class MainWindow;
@@ -17,6 +18,15 @@ public:
 
 private:
     Ui::MainWindow *ui;
+    SerialDetector *serialDetector;
+
+private slots:
+
+    void detected(int , QSet<QString>);
 };
+
+
+
+
 
 #endif // MAINWINDOW_H
