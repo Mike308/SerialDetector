@@ -2,6 +2,9 @@
 #define SERIALDETECTOR_H
 #include <QObject>
 #include <QThread>
+#include <QMap>
+#include <QList>
+
 #include "serialscanner.h"
 
 
@@ -13,12 +16,19 @@ class SerialDetector : public QObject
 public:
     SerialDetector();
     ~SerialDetector();
+    QSerialPortInfo getSerialPortInfo(const QString &portName);
+
 
 private:
     SerialScanner *serialScanner;
 
+
+
+
+
 public slots:
     void handleResults(const int &status, const QSet<QString> &coms);
+
 
 signals:
 
